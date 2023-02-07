@@ -4,8 +4,9 @@ import com.example.dependencyinjectionstart.example1.ComputerTower
 import com.example.dependencyinjectionstart.example1.Keyboard
 import com.example.dependencyinjectionstart.example1.Monitor
 import com.example.dependencyinjectionstart.example1.Mouse
+import javax.inject.Inject
 
-class Computer (
+class Computer @Inject constructor(
     val monitor: Monitor,
     val computerTower: ComputerTower,
     val keyboard: Keyboard,
