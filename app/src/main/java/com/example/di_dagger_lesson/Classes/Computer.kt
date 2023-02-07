@@ -6,7 +6,7 @@ import com.example.dependencyinjectionstart.example1.Monitor
 import com.example.dependencyinjectionstart.example1.Mouse
 import javax.inject.Inject
 
-class Computer @Inject constructor(
+class Computer(
     val monitor: Monitor,
     val computerTower: ComputerTower,
     val keyboard: Keyboard,
