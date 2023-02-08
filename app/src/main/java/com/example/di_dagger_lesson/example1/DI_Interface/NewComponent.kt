@@ -1,6 +1,5 @@
-package com.example.di_dagger_lesson.DI_Interface
+package com.example.di_dagger_lesson.example1.DI_Interface
 
-import com.example.di_dagger_lesson.Activity
 import dagger.Component
 
 @Component(modules = [ComputerModule::class])
