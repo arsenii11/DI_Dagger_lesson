@@ -1,6 +1,9 @@
-package com.example.dependencyinjectionstart.example2.domain
+package com.example.di_dagger_lesson.example2.domain
 
-class ExampleUseCase(
+import com.example.di_dagger_lesson.example2.domain.ExampleRepository
+import javax.inject.Inject
+
+class ExampleUseCase @Inject constructor(
     private val repository: ExampleRepository
 ) {
 

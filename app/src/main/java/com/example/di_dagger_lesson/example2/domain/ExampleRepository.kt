@@ -1,4 +1,4 @@
-package com.example.dependencyinjectionstart.example2.domain
+package com.example.di_dagger_lesson.example2.domain
 
 interface ExampleRepository {
 

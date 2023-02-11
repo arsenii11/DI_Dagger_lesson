@@ -1,4 +1,4 @@
-package com.example.dependencyinjectionstart.example2.data.datasource
+package com.example.di_dagger_lesson.example2.data.datasource
 
 interface ExampleRemoteDataSource {
 

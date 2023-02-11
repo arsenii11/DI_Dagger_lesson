@@ -1,4 +1,4 @@
-package com.example.dependencyinjectionstart.example1
+package com.example.di_dagger_lesson.example1.DI_Interface.Classes
 
 import javax.inject.Inject
 

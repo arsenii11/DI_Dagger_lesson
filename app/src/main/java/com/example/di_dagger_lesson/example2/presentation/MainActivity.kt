@@ -1,4 +1,4 @@
-package com.example.dependencyinjectionstart.example2.presentation
+package com.example.di_dagger_lesson.example2.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
