@@ -2,14 +2,12 @@ package com.example.di_dagger_lesson.example2.DI
 
 import com.example.di_dagger_lesson.example2.data.repository.ExampleRepositoryImpl
 import com.example.di_dagger_lesson.example2.domain.ExampleRepository
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 @Module
-class DomainModule {
+interface DomainModule {
 
-    @Provides
-    fun provideRepository(impl: ExampleRepositoryImpl):ExampleRepository{
-        return impl
-    }
+    @Binds
+    fun bindRepository(impl: ExampleRepositoryImpl):ExampleRepository
 }
