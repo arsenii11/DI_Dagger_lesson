@@ -1,10 +1,12 @@
 package com.example.di_dagger_lesson.example2.presentation
 
+import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.di_dagger_lesson.R
 import com.example.di_dagger_lesson.example1.DI_Interface.DaggerNewComponent.builder
 import com.example.di_dagger_lesson.example2.DI.DaggerApplicationComponent
+import com.example.di_dagger_lesson.example2.ExampleApp
 
 import javax.inject.Inject
 
@@ -15,8 +17,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel: ExampleViewModel
 
     private val component by lazy {
-        DaggerApplicationComponent.factory()
-            .create(application, System.currentTimeMillis())
+        (application as ExampleApp).component
+
     }
 
 
