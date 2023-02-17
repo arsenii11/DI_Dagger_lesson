@@ -6,7 +6,8 @@ import com.example.di_dagger_lesson.R
 import javax.inject.Inject
 
 class ExampleDatabase @Inject constructor(
-    private val context:Context
+    private val context:Context,
+    private val timeMillis: Long
 ){
 
     fun method() {

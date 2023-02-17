@@ -3,20 +3,22 @@ package com.example.di_dagger_lesson.example2.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.di_dagger_lesson.R
-import com.example.di_dagger_lesson.example2.DI.ContextModule
 import com.example.di_dagger_lesson.example2.DI.DaggerApplicationComponent
+
 import javax.inject.Inject
 
 
 class MainActivity : AppCompatActivity() {
 
-  @Inject
-  lateinit var viewModel: ExampleViewModel
+    @Inject
+    lateinit var viewModel: ExampleViewModel
 
-  private val component by lazy {DaggerApplicationComponent.builder()
-      .contextModule(ContextModule(application))
-      .build()
-  }
+    private val component by lazy {
+        DaggerApplicationComponent.builder()
+            .context(application)
+            .timeMillis(System.currentTimeMillis())
+            .build()
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
