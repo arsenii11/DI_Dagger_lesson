@@ -19,7 +19,11 @@ class MainActivity : AppCompatActivity() {
 
 
     private val viewModel by lazy {
-        ViewModelProvider(this,  vIewModelFactory)[ExampleViewModel::class.java]
+        ViewModelProvider(this,  vIewModelFactory)[ExampleViewModel::class.java ]
+    }
+
+    private val viewModel2 by lazy {
+        ViewModelProvider(this,  vIewModelFactory)[ExampleViewModel2::class.java ]
     }
 
     private val component by lazy {
@@ -33,5 +37,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel.method()
+        viewModel2.method()
     }
 }
