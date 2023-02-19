@@ -3,6 +3,7 @@ package com.example.di_dagger_lesson.example2.presentation
 import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import com.example.di_dagger_lesson.R
 import com.example.di_dagger_lesson.example1.DI_Interface.DaggerNewComponent.builder
 import com.example.di_dagger_lesson.example2.DI.DaggerApplicationComponent
@@ -14,7 +15,12 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var viewModel: ExampleViewModel
+    lateinit var vIewModelFactory: VIewModelFactory
+
+
+    private val viewModel by lazy {
+        ViewModelProvider(this,  vIewModelFactory)[ExampleViewModel::class.java]
+    }
 
     private val component by lazy {
         (application as ExampleApp).component
