@@ -8,7 +8,8 @@ import javax.inject.Singleton
 
 
 class ExampleViewModel @Inject constructor(
-    private val useCase: ExampleUseCase
+    private val useCase: ExampleUseCase,
+    private val id: String
 ) :ViewModel(){
 
     fun method() {
