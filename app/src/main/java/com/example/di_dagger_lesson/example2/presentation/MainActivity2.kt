@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.di_dagger_lesson.R
 import com.example.di_dagger_lesson.example1.DI_Interface.DaggerNewComponent.builder
-import com.example.di_dagger_lesson.example2.DI.DaggerApplicationComponent
 import com.example.di_dagger_lesson.example2.ExampleApp
 
 import javax.inject.Inject
@@ -29,7 +28,7 @@ class MainActivity2 : AppCompatActivity() {
     private val component by lazy {
         (application as ExampleApp).component
             .activityComponentFactory()
-            .create("MY_ID_2")
+            .create("MY_ID_2","MY_NAME_2")
 
     }
 

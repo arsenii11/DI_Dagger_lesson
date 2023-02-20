@@ -4,6 +4,7 @@ import com.example.di_dagger_lesson.example2.presentation.MainActivity
 import com.example.di_dagger_lesson.example2.presentation.MainActivity2
 import dagger.BindsInstance
 import dagger.Subcomponent
+import javax.inject.Named
 
 
 @Subcomponent(
@@ -19,7 +20,8 @@ interface ActivityComponent {
     interface Factory {
 
         fun create(
-            @BindsInstance id: String
+            @BindsInstance @Named("id") id: String,
+            @BindsInstance @Named("name") name: String
         ): ActivityComponent
 
     }
