@@ -3,17 +3,20 @@ package com.example.di_dagger_lesson.example2.presentation
 import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.di_dagger_lesson.example2.DI.ApplicationScope
 import com.example.di_dagger_lesson.example2.domain.ExampleRepository
 import com.example.di_dagger_lesson.example2.domain.ExampleUseCase
 import javax.inject.Inject
+import javax.inject.Provider
 
+
+@ApplicationScope
 class VIewModelFactory @Inject constructor(
-private val viewModels: @JvmSuppressWildcards Map<String, ViewModel>
+private val viewModelProviders: @JvmSuppressWildcards Map<String, Provider<ViewModel>>
 ):ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass:  Class<T>): T {
 
-        return viewModels[modelClass.simpleName] as T
-/*        throw RuntimeException("Unknown view model class $modelClass")*/
+        return viewModelProviders[modelClass.simpleName]?.get() as T
     }
 }
